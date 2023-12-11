@@ -7,7 +7,7 @@ namespace Music
 {
 	namespace Categorization
 	{
-		class TimeSpan : public TextableObject, public Music::Serialization::Serealizeble
+		class TimeSpan : public TextableObject, public Music::Serialization::Serializeble
 		{
 		private:
 			size_t milliseconds_;

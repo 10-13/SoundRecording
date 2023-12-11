@@ -8,7 +8,7 @@ namespace Music
 {
 	namespace Styles
 	{
-		class Style : public Music::Categorization::TextableObject, public Music::Serialization::Serealizeble
+		class Style : public Music::Categorization::TextableObject, public Music::Serialization::Serializeble
 		{
 		private:
 			size_t indexing_;
@@ -28,6 +28,10 @@ namespace Music
 
 			void ToStream(std::ostream& out) const override;
 			void FromStream(std::istream& in) override;
+
+			size_t Hash() const;
+
+			bool operator==(const Style& b) const;
 
 			std::string ToString() const;
 		};

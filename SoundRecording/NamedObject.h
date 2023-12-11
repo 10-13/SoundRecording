@@ -9,7 +9,7 @@ namespace Music
 {
 	namespace Categorization
 	{
-		class NamedObject : public TextableObject, public Music::Serialization::Serealizeble
+		class NamedObject : public TextableObject, public Music::Serialization::Serializeble
 		{
 		protected:
 			std::string name_;
@@ -20,9 +20,9 @@ namespace Music
 			NamedObject() {};
 
 		public:
-			std::string Name();
-			std::string Description();
-			std::vector<std::string> Authors();
+			std::string Name() const;
+			std::string Description() const;
+			std::vector<std::string> Authors() const;
 
 			void ToStream(std::ostream& out) const override;
 			void FromStream(std::istream& in) override;

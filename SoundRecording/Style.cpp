@@ -22,6 +22,11 @@ namespace Music
 			return GetName();
 		}
 
+		bool Style::operator==(const Style& b) const
+		{
+			return indexing_ == b.indexing_;
+		}
+
 		void Style::ToStream(std::ostream& out) const
 		{
 			out << GetName() << '\n' << GetDescription();
@@ -37,6 +42,11 @@ namespace Music
 				StyleRegestry::AddUserStyle(n, d);
 			}
 			this->indexing_ = StyleRegestry::ConatainsStyleWithName(n);
+		}
+
+		size_t Style::Hash() const
+		{
+			return indexing_;
 		}
 	}
 }

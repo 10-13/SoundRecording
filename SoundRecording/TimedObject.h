@@ -19,7 +19,7 @@ namespace Music
 				return length_.ToString();
 			}
 
-			TimeSpan Length()
+			TimeSpan Length() const
 			{
 				return length_;
 			}

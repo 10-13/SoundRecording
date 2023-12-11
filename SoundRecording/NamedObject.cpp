@@ -19,17 +19,17 @@ namespace Music
 			return r;
 		}
 
-		std::string NamedObject::Name()
+		std::string NamedObject::Name() const
 		{
 			return name_;
 		}
 
-		std::string NamedObject::Description()
+		std::string NamedObject::Description() const
 		{
 			return description_;
 		}
 
-		std::vector<std::string> NamedObject::Authors()
+		std::vector<std::string> NamedObject::Authors() const
 		{
 			return authors_;
 		}

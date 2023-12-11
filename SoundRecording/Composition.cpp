@@ -29,7 +29,7 @@ namespace Music
 		}
 	}
 
-	std::vector<Style> Composition::Styles()
+	std::vector<Style> Composition::Styles() const
 	{
 		return styles_;
 	}

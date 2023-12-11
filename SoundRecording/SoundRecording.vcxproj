@@ -128,9 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BasedComparer.h" />
-    <ClInclude Include="Build.h" />
     <ClInclude Include="Composition.h" />
     <ClInclude Include="CompositionBuilder.h" />
+    <ClInclude Include="Disk.h" />
     <ClInclude Include="IPlayble.h" />
     <ClInclude Include="NamedObject.h" />
     <ClInclude Include="Serializeble.h" />
@@ -143,9 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasedComparer.cpp" />
-    <ClCompile Include="Build.cpp" />
     <ClCompile Include="Composition.cpp" />
     <ClCompile Include="CompositionBuilder.cpp" />
+    <ClCompile Include="Disk.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NamedObject.cpp" />
     <ClCompile Include="Serealizeble.cpp" />

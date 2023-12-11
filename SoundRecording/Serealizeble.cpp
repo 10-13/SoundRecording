@@ -4,13 +4,13 @@ namespace Music
 {
 	namespace Serialization
 	{
-		std::ostream& operator<<(std::ostream& out, const Serealizeble* const obj)
+		std::ostream& operator<<(std::ostream& out, const Serializeble* const obj)
 		{
 			obj->ToStream(out);
 			return out;
 		}
 		
-		std::istream& operator>>(std::istream& in, Serealizeble* const obj)
+		std::istream& operator>>(std::istream& in, Serializeble* const obj)
 		{
 			obj->FromStream(in);
 			return in;

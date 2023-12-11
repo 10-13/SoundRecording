@@ -14,11 +14,15 @@ namespace Music
 		};
 
 		const std::vector<StyleTemplate> DefaultStyleTemplates{
-				{"Pop",""},
-				{"Rock",""},
-				{"Rap",""} };
-
-		
+			{"Pop", ""},
+			{"Rock", ""},
+			{"Rap", ""},
+			{"Noise", ""},
+			{"Jungle", ""},
+			{"Grunge", ""},
+			{"Electronic", ""},
+			{"Phonk", ""},
+			{"Rave", ""} };
 
 		static class StyleRegestry
 		{
