@@ -11,11 +11,17 @@ namespace Music
 		protected:
 			TimeSpan length_;
 			TimedObject(size_t millisecs) : length_(millisecs) {}
+			TimedObject() : length_(0) {};
 
 		public:
 			std::string ToString() const
 			{
 				return length_.ToString();
+			}
+
+			TimeSpan Length()
+			{
+				return length_;
 			}
 
 			friend class TimeBasedComparer;

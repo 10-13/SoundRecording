@@ -6,6 +6,8 @@ namespace Music
 	{
 		TimeSpan::TimeSpan(size_t ms) : milliseconds_(ms) {}
 
+		TimeSpan::TimeSpan(size_t hours, size_t minutes, size_t seconds) : milliseconds_((hours * 3600 + minutes * 60 + seconds) * 1000) {}
+
 		size_t TimeSpan::RawMilliseconds() const noexcept
 		{
 			return milliseconds_;
@@ -18,12 +20,12 @@ namespace Music
 
 		size_t TimeSpan::RawMinutes() const noexcept
 		{
-			return Seconds() / 60;
+			return RawSeconds() / 60;
 		}
 
 		size_t TimeSpan::RawHours() const noexcept
 		{
-			return Minutes() / 60;
+			return RawMinutes() / 60;
 		}
 
 		size_t TimeSpan::Milliseconds() const noexcept
@@ -68,7 +70,18 @@ namespace Music
 
 		std::string TimeSpan::ToString() const
 		{
-			return std::to_string(Hours()) + ":" + std::to_string(Minutes()) + ":" + std::to_string(Seconds());
+			size_t h = Hours(), m = Minutes(), s = Seconds();
+			return std::to_string(h) + ":" + std::to_string(m) + ":" + std::to_string(s);
+		}
+
+		void TimeSpan::ToStream(std::ostream& out) const
+		{
+			out << milliseconds_;
+		}
+
+		void TimeSpan::FromStream(std::istream& in)
+		{
+			in >> milliseconds_;
 		}
 	}
 }

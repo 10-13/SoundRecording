@@ -1,6 +1,7 @@
 #pragma once
 #include "TextableObject.h"
 #include "BasedComparer.h"
+#include "Serializeble.h"
 #include <string>
 #include <vector>
 
@@ -8,28 +9,25 @@ namespace Music
 {
 	namespace Categorization
 	{
-		class NamedObject : public TextableObject
+		class NamedObject : public TextableObject, public Music::Serialization::Serealizeble
 		{
 		protected:
 			std::string name_;
 			std::string description_;
 			std::vector<std::string> authors_;
 
-			NamedObject(std::string name, std::string description, std::vector<std::string> authors)
-				: name_(name),
-				description_(description_),
-				authors_(authors_) {}
+			NamedObject(std::string name, std::string description, std::vector<std::string> authors);
+			NamedObject() {};
 
 		public:
-			std::string ToString() const override
-			{
-				std::string r = name_ + " -";
-				for (size_t i = 0; i < authors_.size(); i++)
-				{
-					r += (i == 0 ? " " : ", ") + authors_[i];
-				}
-				return r;
-			}
+			std::string Name();
+			std::string Description();
+			std::vector<std::string> Authors();
+
+			void ToStream(std::ostream& out) const override;
+			void FromStream(std::istream& in) override;
+
+			std::string ToString() const override;
 
 			friend class NameBasedComparere;
 			friend class DescriptionBasedComparere;
