@@ -41,6 +41,12 @@ namespace Music
 			msPop = 0,
 			msRock = 1,
 			msRap = 2,
+			msNoise = 3,
+			msJungle = 4,
+			msGrunge = 5,
+			msElectronic = 6,
+			msPhonk = 7,
+			msRave = 8,
 		};
 	}
 }

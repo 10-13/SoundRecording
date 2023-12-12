@@ -41,7 +41,7 @@ namespace Music
 			return *this;
 		}
 
-		Composition Resault()
+		Composition Result()
 		{
 			return comp_;
 		}

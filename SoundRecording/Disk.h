@@ -9,60 +9,19 @@ namespace Music
 	private:
 		struct StyleHash
 		{
-			size_t operator()(const Style& obj) const noexcept
-			{
-				return obj.Hash();
-			}
+			size_t operator()(const Style& obj) const noexcept;
 		};
 	public:
 		std::vector<Composition> Compositions;
 
 		Disk() = default;
 
-		void ToStream(std::ostream& out) const override
-		{
-			out << Compositions.size() << '\n';
-			for (auto& i : Compositions)
-			{
-				i.ToStream(out);
-				out << "\n";
-			}
-		}
-		void FromStream(std::istream& in) override
-		{
-			size_t sz = 0;
-			in >> sz;
-			std::string a;
-			std::getline(in, a);
-			while (sz-- != 0)
-			{
-				Compositions.push_back({});
-				Compositions.back().FromStream(in);
-			}
-		}
+		void ToStream(std::ostream& out) const override;
+		void FromStream(std::istream& in) override;
 
-		std::vector<Style> Styles() const
-		{
-			std::unordered_set<Style, StyleHash> set;
-			for (auto& cmp : Compositions)
-			{
-				for (auto& style : cmp.Styles())
-				{
-					set.insert(style);
-				}
-			}
-			return std::vector<Style>(set.begin(), set.end());
-		}
+		std::vector<Style> Styles() const;
 
-		TimeSpan Length() const
-		{
-			TimeSpan res(0);
-			for (auto& cmp : Compositions)
-			{
-				res = res + cmp.Length();
-			}
-			return res;
-		}
+		TimeSpan Length() const;
 	};
 }
 

@@ -14,10 +14,5 @@ using namespace Music::Styles::Factory;
 
 int main()
 {
-	auto res = CompositionBuilder().SetName("Rock Town").AddStyle(CreateDefaultStyle(DefaultStyles::msRock)).AddAuthor("Timmy Trumpet").SetLength(0, 3, 45).Resault();
-	Disk disk;
-	disk.Compositions.push_back(res);
-	disk.Compositions.push_back(res);
-	disk.Compositions.push_back(res);
-	disk.ToStream(std::cout);
+
 }
